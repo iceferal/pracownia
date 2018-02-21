@@ -1,0 +1,16 @@
+Galaktyka2\DefaultCatalog.class
+Galaktyka2\tables\Planeta.class
+Galaktyka2\tables\Uklad.class
+Uklad.class
+Galaktyka2\tables\records\UkladRecord.class
+Galaktyka2\Public.class
+App.class
+Galaktyka2\Tables.class
+Galaktyka2\Keys.class
+cONTROLED\UkladController.class
+Planeta.class
+Galaktyka2\tables\interfaces\IPlaneta.class
+Galaktyka2\tables\records\PlanetaRecord.class
+Galaktyka2\tables\pojos\Planeta.class
+Galaktyka2\tables\interfaces\IUklad.class
+Galaktyka2\tables\pojos\Uklad.class

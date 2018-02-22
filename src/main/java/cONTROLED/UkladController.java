@@ -28,13 +28,13 @@ public class UkladController {
         UkladRecord ur = jooq.newRecord(UKLAD);
         ur.setNazwa(uklad.nazwa);
         ur.setIloscPlanet(uklad.ilosc_planet);
-
+        ur.store();
     }
 
     @DeleteMapping("/uklad/{nazwa}")
     public void delete(@PathVariable String nazwa)
     {
         UkladRecord ur = jooq.fetchOne(UKLAD, UKLAD.NAZWA.eq(nazwa));
-
+        ur.delete();
     }
 }

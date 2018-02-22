@@ -14,7 +14,7 @@ import static Galaktyka2.tables.Planeta.PLANETA;
 public class PlanetaController {
 
     @Autowired
-    public DSLContext jooq;
+    private DSLContext jooq;
 
     @GetMapping("/planeta")
     public List<Planeta> planeta() {
@@ -29,6 +29,8 @@ public class PlanetaController {
         pr.setMasa(planeta.masa);
         pr.setOkresOrbitalny(planeta.okres_orbitalny);
         pr.setUklad(planeta.uklad);
+        pr.store();
+
 
     }
 
@@ -36,6 +38,6 @@ public class PlanetaController {
     public void delete(@PathVariable String nazwa)
     {
         PlanetaRecord pr = jooq.fetchOne(PLANETA, PLANETA.NAZWA.eq(nazwa));
-
+        pr.delete();
     }
 }

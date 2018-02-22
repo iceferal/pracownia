@@ -1,11 +1,9 @@
 package cONTROLED;
 
-
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import Galaktyka2.tables.records.UkladRecord;
 
 import java.util.List;
 
@@ -18,8 +16,25 @@ public class UkladController {
     @Autowired
     public DSLContext jooq;
 
-    @GetMapping("/greeting")
+
+    @GetMapping("/uklad")
     public List<Uklad> uklad() {
         return jooq.select().from(UKLAD).fetchInto(Uklad.class);
+    }
+
+    @PostMapping("/uklad")
+    public void uklad(@RequestBody Uklad uklad)
+    {
+        UkladRecord ur = jooq.newRecord(UKLAD);
+        ur.setNazwa(uklad.nazwa);
+        ur.setIloscPlanet(uklad.ilosc_planet);
+
+    }
+
+    @DeleteMapping("/uklad/{nazwa}")
+    public void delete(@PathVariable String nazwa)
+    {
+        UkladRecord ur = jooq.fetchOne(UKLAD, UKLAD.NAZWA.eq(nazwa));
+
     }
 }

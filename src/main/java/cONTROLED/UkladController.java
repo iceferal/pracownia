@@ -11,6 +11,7 @@ import static Galaktyka2.tables.Uklad.UKLAD;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:63342")
 public class UkladController {
 
     @Autowired

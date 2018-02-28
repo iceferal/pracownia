@@ -11,6 +11,7 @@ import static Galaktyka2.tables.Planeta.PLANETA;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:63342")
 public class PlanetaController {
 
     @Autowired
@@ -30,8 +31,6 @@ public class PlanetaController {
         pr.setOkresOrbitalny(planeta.okres_orbitalny);
         pr.setUklad(planeta.uklad);
         pr.store();
-
-
     }
 
     @DeleteMapping("/planeta/{nazwa}")

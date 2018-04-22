@@ -1,5 +1,6 @@
 .center {
     text-align: center;
+    margin: auto;
 }
 .button {
     background-color: #7b68ee;
@@ -11,16 +12,16 @@
     font-size: 20px;
 }
 .btn-primary {
-    color: #fff;
-    background-color: #007bff;
+    color: #000000;
+    background-color: #FAFFFA;
     border-color: #007bff;
     font-size: 30px;
 }
 
 .btn-primary:hover {
-    color: #fff;
+    color: #000000;
     background-color: #0069d9;
-    border-color: #0062cc;
+    border-color: #000000;
     font-size: 40px;
 }
 
